@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="welcome" class="com.springdemo.welcomeSpring">  
+<property name="name" value="RVEE"></property>  
+</bean> 
+<bean id="patient" class="com.springdemo.patientDet">  
+<constructor-arg value="1001" type="int" ></constructor-arg>
+<constructor-arg value="VIVEK SHANKAR" ></constructor-arg>
+<constructor-arg value="MIGRANE" ></constructor-arg>
+</bean>
+
+<bean id="p1" class="com.springdemo.addressPat">
+<constructor-arg value="GANAPATHY"></constructor-arg>   
+<constructor-arg value="COIMBATORE"></constructor-arg>  
+<constructor-arg value="TAMILNADU"></constructor-arg>  
+<constructor-arg value="INDIA"></constructor-arg> 
+<constructor-arg value="641006"></constructor-arg> 
+</bean>  
+  
+  
+<bean id="p" class="com.springdemo.patient">  
+<constructor-arg value="45" type="int"></constructor-arg>  
+<constructor-arg value="VIVEK SHANKAR"></constructor-arg>  
+<constructor-arg>  
+<ref bean="p1"/>  
+</constructor-arg>  
+</bean> 
+
+<bean id="d" class="com.springdemo.forList">  
+<constructor-arg value="MG001"></constructor-arg>  
+<constructor-arg value="MIGRANE"></constructor-arg>  
+<constructor-arg>  
+<list>  
+<value>*A severe throbbing pain, generally experienced on one side of the head.</value>  
+<value>*Often accompanied by nausea, vomiting, and extreme sensitivity to sound and light.</value>  
+<value>*Requires lab test or imaging</value>  
+</list>  
+</constructor-arg>  
+</bean> 
+<bean id="set" class="com.springdemo.setPatPri">  
+<property name="RoomNo">  
+<value>201</value>  
+</property>  
+<property name="wardName">  
+<value>OBSERVATION WARD</value>  
+</property>  
+<property name="docOnDuty">  
+<value>DR.K.S.LAKSHMAN</value>  
+</property>  
+  
+</bean> 
+<bean id="med" class="com.springdemo.setConsDI">  
+
+<property name="medicine" value="TOPAMAX"></property>  
+<property name="dosage" value="100 MG/DAY"></property>  
+</bean>  
+  
+<bean id="meduse" class="com.springdemo.medicineUse">  
+  <property name="medDose" ref="med"></property>  
+</bean>   
+  
+<bean id="advice" class="com.springdemo.forListSet">  
+<property name="adviceToPatient"> 
+
+<list>  
+<value>*Have minimum 8 hours of sleep</value>  
+<value>*Practise yoga</value>  
+<value>*Regular checkup on BP</value>  
+</list>  
+</property> 
+</bean>
+
+  
+</beans>  
